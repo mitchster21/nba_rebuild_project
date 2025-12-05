@@ -1,0 +1,23 @@
+[build-system]
+requires = ["uv_build >= 0.9.5, <0.10.0"]
+build-backend = "uv_build"
+
+[project]
+name = "nba_rebuilds"
+version = "0.1.0"
+description = "A package for analyzing NBA team rebuild cycles."
+authors = [
+  { name = "Mitch Heaton", "Walter Vogelmann"}
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "pandas",
+  "nba_api",
+  "ipykernel>=7.1.0",
+  "jupyter>=1.1.1",
+  "numpy>=2.3.5",
+  "pandas>=2.3.3",
+  "streamlit>=1.40.0",
+]
+
