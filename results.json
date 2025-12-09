@@ -1,0 +1,11 @@
+{
+    "tests": [
+        {
+            "score": 0,
+            "max_score": 0,
+            "name": "test_basic.py::test_imports",
+            "output": "\n",
+            "visibility": "visible"
+        }
+    ]
+}
