@@ -8,7 +8,6 @@ def get_standings(season="2023-24"):
     standings = leaguestandings.LeagueStandings(season=season)
     df = standings.get_data_frames()[0]
 
-    # Rename to match your workflow
     df = df.rename(columns={
         'WINS': 'Wins',
         'LOSSES': 'Losses',

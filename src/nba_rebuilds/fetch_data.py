@@ -17,7 +17,7 @@ def save_standings(start, end):
         print(f"Fetching standings for {season_id}...")
         df = get_standings(season_id)
 
-        # Rename columns to match your workflow
+        # Rename columns to match workflow
         df = df.rename(columns={
             'WINS': 'Wins',
             'LOSSES': 'Losses',
