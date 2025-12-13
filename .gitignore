@@ -1,1 +1,3 @@
 venv/
+src/nba_rebuilds/data/*.csv
+__pycache__/
