@@ -12,6 +12,8 @@ website:
         text: Tutorial
       - href: report.qmd
         text: Written Report
+      - href: documentation.qmd
+        text: Function/Class Documentation
 
 format:
   html:
