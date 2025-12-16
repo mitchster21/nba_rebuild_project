@@ -1,0 +1,19 @@
+project:
+  type: website
+  output-dir: .
+
+website:
+  title: "NBA Rebuilds"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: tutorial.qmd
+        text: Tutorial
+      - href: report.qmd
+        text: Written Report
+
+format:
+  html:
+    theme: cosmo
+    toc: true
