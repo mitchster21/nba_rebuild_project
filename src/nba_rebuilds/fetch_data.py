@@ -2,8 +2,9 @@ import argparse
 import os
 import time
 from nba_rebuilds.scraping import get_standings
+from pathlib import Path
 
-DATA_DIR = "nba_rebuilds/data"
+DATA_DIR = Path(__file__).resolve().parent / "data"
 
 def save_standings(start, end):
     os.makedirs(DATA_DIR, exist_ok=True)
