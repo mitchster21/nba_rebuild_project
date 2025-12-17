@@ -1,0 +1,126 @@
+---
+title: "Documentation"
+---
+
+### Files & Functions:
+
+# fetch_data.py
+
+## save_standings(start, end)
+- **Purpose:** fetch and persist season standings CSVs for a range of seasons.  
+- **Inputs:** start (int) and end (int) years (e.g., 2010 means season "2009-10" is fetched).  
+- **Behavior:**  
+  - Ensures DATA_DIR exists  
+  - Iterates years from start to end, formats NBA season string like "2009-10"  
+  - Calls get_standings(season_id) to fetch standings  
+  - Normalizes column names and adds Season and MadePlayoffs (top 8 per conference) columns  
+  - Sleeps 1 second between API calls  
+  - Writes each season to `data/standings_{season}.csv` and prints progress  
+- **Output / side effects:** CSV files written under `src/nba_rebuilds/data` and console prints  
+
+## main()
+- **Purpose:** CLI entrypoint to run data fetching.  
+- **Inputs:** command-line arguments --start (int), --end (int), --type (str).  
+- **Behavior:**  
+  - Parses args, calls save_standings when --type is "standings", otherwise raises ValueError  
+- **Output / side effects:** invokes save_standings or raises on unknown type  
+
+### Module entrypoint
+- If run as script, calls main()  
+
+
+# eda.ipynb
+- Collect data on nba standings and make a Gantt chart showing the length of recent NBA rebuilds  
+
+
+# train_model.py
+
+## calculate_years_to_playoffs(df)
+- **Purpose:** identify seasons where a team missed the playoffs immediately after making them and compute how many years until that team next returned to the playoffs.  
+- **Inputs:** pandas DataFrame with at least ['team_name', 'season', 'playoffs'] columns (playoffs encoded 1/0).  
+- **Behavior:**  
+  - sorts by team and season, iterates team-by-team  
+  - for each season that follows a playoff season but is a miss, scans forward to count years until the next playoffs appearance  
+  - includes only rows where a subsequent playoff appearance is found  
+- **Output:** DataFrame of rows (one per qualifying missed season) with an added years_to_return column (and other original columns).  
+
+## train_and_save_model()
+- **Purpose:** build, evaluate, pick, and persist a regression model that predicts years until a team returns to the playoffs.  
+- **Inputs:** reads data from `final_combined_file.csv` in the project root.  
+- **Behavior:**  
+  - calls calculate_years_to_playoffs to build the training dataset  
+  - selects a fixed set of features (roster_size, retained_players, new_players, departed_players, continuity_pct, avg_age, median_age, oldest_player, youngest_player, avg_experience, rookies_count, all_nba_count)  
+  - splits into train/test, standard-scales features  
+  - trains RandomForestRegressor and GradientBoostingRegressor, evaluates MAE/RMSE/R² and 5-fold CV MAE  
+  - chooses best model by lowest test MAE, prints feature importances if available  
+  - saves the chosen model, scaler, and feature column list to `src/nba_rebuilds/data/models` as .pkl files  
+- **Output:** returns (best_model, scaler, feature_cols) and writes three .pkl files to disk  
+- **Side effects:** prints progress and metrics, creates models directory if missing  
+
+### Module entrypoint
+- If run as script (main), calls train_and_save_model()  
+
+
+# predictor.py
+
+## PlayoffPredictor.init(model_path: str = None)
+- **Purpose:** load a trained model, scaler, and feature list for making predictions.  
+- **Inputs:** optional path to the directory containing model files; defaults to `data/models` next to the module.  
+- **Behavior:** resolves the path and joblib.loads "playoff_return_model.pkl", "feature_scaler.pkl", and "feature_columns.pkl" into self.model, self.scaler, self.feature_cols.  
+- **Output:** initialized PlayoffPredictor instance  
+
+## PlayoffPredictor.predict(team_data: Dict | pd.DataFrame) -> float
+- **Purpose:** predict years until a team returns to the playoffs for a single team.  
+- **Inputs:** a dict of feature values or a one-row DataFrame containing all required features.  
+- **Behavior:** converts dict to DataFrame if needed, validates required features (raises ValueError if any missing), orders/selects features, scales them with the loaded scaler, runs the model, and returns the first prediction.  
+- **Output:** a single float prediction  
+
+## PlayoffPredictor.predict_batch(teams_data: pd.DataFrame) -> np.ndarray
+- **Purpose:** predict years-to-return for multiple teams at once.  
+- **Inputs:** DataFrame with one row per team containing the required feature columns.  
+- **Behavior:** selects feature columns, scales them, and returns model predictions for all rows.  
+- **Output:** numpy array of predictions  
+
+## PlayoffPredictor.get_feature_importance() -> pd.DataFrame | None
+- **Purpose:** expose model feature importances when available.  
+- **Inputs:** none.  
+- **Behavior:** if the loaded model has attribute feature_importances_, returns a DataFrame with features and importance sorted descending; otherwise returns None.  
+- **Output:** DataFrame of feature importances or None  
+
+
+# 1_Rebuild_Analyzer.py
+
+## aggregate_by_team(df: pd.DataFrame) -> pd.DataFrame
+- **Purpose:** collapse multi-season standings into one row per team.  
+- **Inputs:** DataFrame with columns including SeasonID, Wins, WinPct, MadePlayoffs, TeamName.  
+- **Behavior:** groups by TeamName and computes Seasons (count), AvgWins, AvgWinPct, PlayoffAppearances (sum), PlayoffRate (mean), FirstSeason, LastSeason; resets index and sorts by AvgWinPct desc.  
+- **Output:** aggregated DataFrame with one row per team  
+
+## _run_with_capture(func, *args, **kwargs) -> str
+- **Purpose:** run a function and capture its stdout as a string.  
+- **Inputs:** callable and its args/kwargs.  
+- **Behavior:** redirects stdout to an in-memory buffer while calling the function, returns captured output stripped.  
+- **Output:** captured stdout string  
+
+## load_season_csv(year: int) -> pd.DataFrame
+- **Purpose:** load a single season standings CSV into a DataFrame.  
+- **Inputs:** integer year (e.g., 2021 loads "2020-21").  
+- **Behavior:** constructs season_id, builds path to `data/standings_{season_id}.csv`, raises FileNotFoundError if missing, reads CSV, adds SeasonID column.  
+- **Output:** DataFrame for that season  
+
+## main() -> None
+- **Purpose:** Streamlit app entrypoint for fetching standings, previewing multi-season data, and computing rebuilds.  
+- **Behavior:** renders UI controls (start/end year, fetch/compute buttons, view mode), optionally calls fetch_data.save_standings (with output capture), loads season files into a combined DataFrame, shows either team summary (via aggregate_by_team) or raw data, and when requested runs rebuilds.compute_rebuilds and displays results.  
+- **Output / side effects:** interactive Streamlit UI, console/st UI messages, may call external I/O (fetch/save CSVs)  
+
+### Module entrypoint
+- If run as a script, calls main()  
+
+
+# 2_Playoff_Predictor.py
+
+## load_model() (cached via @st.cache_resource)
+- **Purpose:** instantiate and return a PlayoffPredictor and a success flag.  
+- **Inputs:** none.  
+- **Behavior:** tries to create PlayoffPredictor(); on success returns (predictor, True); on exception logs an error to Streamlit and returns (None, False).  
+- **Notes:** the rest of the file is a Streamlit app (no other top-level functions). It builds the UI, collects user inputs, calls predictor.predict() for a single-team prediction and predictor.get_feature_importance() for visualization, and displays results and interpretation.  
