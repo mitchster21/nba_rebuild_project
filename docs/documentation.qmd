@@ -2,9 +2,9 @@
 title: "Documentation"
 ---
 
-### Files & Functions:
+# Files & Functions:
 
-# fetch_data.py
+## fetch_data.py
 
 ## save_standings(start, end)
 - **Purpose:** fetch and persist season standings CSVs for a range of seasons.  

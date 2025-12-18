@@ -1,0 +1,22 @@
+project:
+  type: website
+
+website:
+  title: "NBA Analytics Suite"
+  navbar:
+    left:
+      - text: "Home"
+        href: docs/index.qmd
+      - text: "Tutorial"
+        href: docs/tutorial.qmd
+      - text: "Report"
+        href: docs/report.qmd
+      - text: "Documentation"
+        href: docs/documentation.qmd
+
+format:
+  html:
+    theme: flatly
+    toc: true
+
+output-dir: _site

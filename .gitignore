@@ -3,3 +3,5 @@ src/nba_rebuilds/data/*.csv
 __pycache__/
 *.pyc
 src/nba_rebuilds/data/*.csv
+/.quarto/
+**/*.quarto_ipynb

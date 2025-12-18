@@ -1,7 +1,15 @@
 ---
-title: "docs"
+title: "Home"
 ---
 
-This is a Quarto website.
+## Welcome to the NBA Analytics Suite
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+This site provides tools and reports for analyzing NBA team rebuilds and predicting playoff returns.  
+
+Use the navigation bar at the top to explore:  
+
+- **Tutorial** – Step-by-step guide for using the NBA Analytics Suite.  
+- **Report** – Written analysis of NBA rebuild patterns and predictive modeling.  
+- **Documentation** – Technical reference for the underlying Python package.  
+
+All tools are interactive and designed to help you explore NBA data without programming.

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>docs – NBA Rebuilds</title>
+<title>Analyzing NBA Rebuilds and Playoff Prediction – NBA Analytics Suite</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +23,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-f93c2b1f3f0577f377aefa4848a86a36.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -79,10 +79,10 @@ ul.task-list li input[type="checkbox"] {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
     </a>
-    <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">NBA Rebuilds</span>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">NBA Analytics Suite</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -92,20 +92,20 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page"> 
+    <a class="nav-link" href="../docs/index.html"> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./tutorial.html"> 
+    <a class="nav-link" href="../docs/tutorial.html"> 
 <span class="menu-text">Tutorial</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./report.html"> 
-<span class="menu-text">Written Report</span></a>
+    <a class="nav-link active" href="../docs/report.html" aria-current="page"> 
+<span class="menu-text">Report</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./documentation.html"> 
-<span class="menu-text">Function/Class Documentation</span></a>
+    <a class="nav-link" href="../docs/documentation.html"> 
+<span class="menu-text">Documentation</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -118,15 +118,28 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction">Introduction</a></li>
+  <li><a href="#data-collection" id="toc-data-collection" class="nav-link" data-scroll-target="#data-collection">Data Collection</a></li>
+  <li><a href="#rebuild-analysis" id="toc-rebuild-analysis" class="nav-link" data-scroll-target="#rebuild-analysis">Rebuild Analysis</a></li>
+  <li><a href="#predictive-modeling" id="toc-predictive-modeling" class="nav-link" data-scroll-target="#predictive-modeling">Predictive Modeling</a></li>
+  <li><a href="#use-of-artificial-intelligence-tools" id="toc-use-of-artificial-intelligence-tools" class="nav-link" data-scroll-target="#use-of-artificial-intelligence-tools">Use of Artificial Intelligence Tools</a></li>
+  <li><a href="#streamlit-applications" id="toc-streamlit-applications" class="nav-link" data-scroll-target="#streamlit-applications">Streamlit Applications</a></li>
+  <li><a href="#limitations" id="toc-limitations" class="nav-link" data-scroll-target="#limitations">Limitations</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">docs</h1>
+<h1 class="title">Analyzing NBA Rebuilds and Playoff Prediction</h1>
 </div>
 
 
@@ -143,10 +156,62 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This is a Quarto website.</p>
-<p>To learn more about Quarto websites visit <a href="https://quarto.org/docs/websites" class="uri">https://quarto.org/docs/websites</a>.</p>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Professional sports teams often cycle between competitive peaks and rebuilding phases. In the NBA, rebuilding can take several seasons and depends on roster continuity, player development, and organizational decisions.</p>
+<p>This project explores NBA rebuilds using historical standings data (2010–2023) and applies machine learning to estimate how long teams may take to return to playoff contention. Understanding these patterns helps teams plan strategically and allows fans to anticipate future performance.</p>
+<p><strong>This report is written for a general audience and does not assume advanced statistical or machine learning background.</strong></p>
+<hr>
+</section>
+<section id="data-collection" class="level2">
+<h2 class="anchored" data-anchor-id="data-collection">Data Collection</h2>
+<p>We collected NBA regular-season standings using the public <code>nba_api</code> Python package. For each season, we recorded: - Wins and losses - Conference - Playoff qualification</p>
+<p>Data were stored as CSV files to ensure reproducibility and offline access. Pre-fetched CSVs were also provided for use in the Streamlit apps to avoid API delays.</p>
+<hr>
+</section>
+<section id="rebuild-analysis" class="level2">
+<h2 class="anchored" data-anchor-id="rebuild-analysis">Rebuild Analysis</h2>
+<p>A rebuild was defined as a period where a team missed the playoffs after previously qualifying, followed by a later return to playoff contention.</p>
+<p>By aggregating multi-season data, we identified how long different teams remained outside the playoffs. Rebuild periods were visualized using tables and season-by-season charts to illustrate team performance trends over time.</p>
+<hr>
+</section>
+<section id="predictive-modeling" class="level2">
+<h2 class="anchored" data-anchor-id="predictive-modeling">Predictive Modeling</h2>
+<p>We trained regression models to predict how many years a team may take to return to the playoffs based on roster and continuity features. Features included roster continuity, playoff experience, and recent performance trends.</p>
+<p>Models evaluated included: - Random Forest - Gradient Boosting</p>
+<p>Performance was assessed using standard error metrics, and the final model was selected based on predictive accuracy.</p>
+<hr>
+</section>
+<section id="use-of-artificial-intelligence-tools" class="level2">
+<h2 class="anchored" data-anchor-id="use-of-artificial-intelligence-tools">Use of Artificial Intelligence Tools</h2>
+<p>Artificial intelligence tools (including large language models) were used to assist in: - Designing the modeling pipeline - Implementing machine learning workflows - Debugging, refactoring, and formatting code</p>
+<p>All results were reviewed, tested, and validated. AI tools were used as a development aid.</p>
+<hr>
+</section>
+<section id="streamlit-applications" class="level2">
+<h2 class="anchored" data-anchor-id="streamlit-applications">Streamlit Applications</h2>
+<p>Two interactive Streamlit applications were built, both accessible via a single app interface: - A <strong>Rebuild Analyzer</strong> for exploring historical trends - A <strong>Playoff Predictor</strong> for estimating future outcomes</p>
+<p>These apps make the analysis accessible to users without programming experience.</p>
+<hr>
+</section>
+<section id="limitations" class="level2">
+<h2 class="anchored" data-anchor-id="limitations">Limitations</h2>
+<ul>
+<li>Predictions depend on historical trends and do not account for injuries, trades, or front-office decisions.</li>
+<li>Model outputs should be interpreted as probabilistic estimates rather than deterministic predictions.</li>
+<li>Roster features approximate team stability, which may not capture all relevant factors.</li>
+</ul>
+<hr>
+</section>
+<section id="conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="conclusion">Conclusion</h2>
+<p>This project demonstrates that publicly available data and modern tooling can meaningfully characterize NBA rebuilds and produce useful forecasts of when teams may return to playoff contention. Historical analysis shows rebuild length varies widely across franchises and seasons; roster continuity and recent performance trends are consistently informative predictors.</p>
+<p>The predictive models and interactive apps are intended as decision-support tools rather than definitive forecasts. Their outputs should be interpreted as probabilistic estimates that complement—rather than replace—scouting, medical, and front-office judgment.</p>
+<p>Future work could improve accuracy by incorporating in-season transactions, injury data, salary-cap dynamics, and more in-depth player-tracking features, and by retraining models as new seasons complete. The code, data, and Streamlit apps are designed for reproducibility and can be extended or adapted by researchers and practitioners.</p>
+<p>By combining our analysis with interactive tools, this work aims to make rebuild dynamics more accessible to teams, analysts, and fans, while encouraging further exploration in the realm of “rebuilding NBA franchises”.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
