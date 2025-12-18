@@ -5,3 +5,6 @@ __pycache__/
 src/nba_rebuilds/data/*.csv
 /.quarto/
 **/*.quarto_ipynb
+_site/
+.DS_Store
+nba_rebuilds.egg-info/
