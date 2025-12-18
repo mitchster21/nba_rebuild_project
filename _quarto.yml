@@ -1,5 +1,6 @@
 project:
   type: website
+  output-dir: docs/_site
 
 website:
   title: "NBA Analytics Suite"
@@ -19,4 +20,4 @@ format:
     theme: flatly
     toc: true
 
-output-dir: _site
+
