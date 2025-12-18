@@ -6,13 +6,13 @@ website:
   navbar:
     left:
       - text: "Home"
-        href: index.html
+        href: index.qmd
       - text: "Tutorial"
-        href: tutorial.html
+        href: tutorial.qmd
       - text: "Report"
-        href: report.html
+        href: report.qmd
       - text: "Documentation"
-        href: documentation.html
+        href: documentation.qmd
 
 format:
   html:
