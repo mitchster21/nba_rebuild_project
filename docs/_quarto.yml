@@ -1,23 +1,23 @@
 project:
   type: website
-  output-dir: docs/_site
 
 website:
   title: "NBA Analytics Suite"
   navbar:
     left:
       - text: "Home"
-        href: docs/index.qmd
+        href: index.qmd
       - text: "Tutorial"
-        href: docs/tutorial.qmd
+        href: tutorial.qmd
       - text: "Report"
-        href: docs/report.qmd
+        href: report.qmd
       - text: "Documentation"
-        href: docs/documentation.qmd
+        href: documentation.qmd
 
 format:
   html:
     theme: flatly
     toc: true
+
 
 

@@ -70,6 +70,7 @@ pages/2_Playoff_Predictor.py
 Rebuild the public site (including the technical report placeholder) with:
 
 ```bash
+cd docs
 uv run quarto render # build site 
 uv run quarto preview # serve locally
 ```
