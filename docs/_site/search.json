@@ -25,7 +25,7 @@
     "href": "report.html#rebuild-analysis",
     "title": "Analyzing NBA Rebuilds and Playoff Prediction",
     "section": "Rebuild Analysis",
-    "text": "Rebuild Analysis\nA rebuild was defined as a period where a team missed the playoffs after previously qualifying, followed by a later return to playoff contention.\nBy aggregating multi-season data, we identified how long different teams remained outside the playoffs. Rebuild periods were visualized using tables and season-by-season charts to illustrate team performance trends over time."
+    "text": "Rebuild Analysis\nA rebuild was defined as a period where a team missed the playoffs after previously qualifying, followed by a later return to playoff contention.\nBy aggregating data across multiple seasons, we measured how long each team remained outside the playoffs. These rebuild periods were visualized using tables and season-by-season charts to highlight team performance trends.\n\nLongest Rebuilds:\n\n\n\nTeam\nRebuild Length\n\n\n\n\nSuns\n11\n\n\n76ers\n6\n\n\nNuggets\n6\n\n\nMagic\n5.5\n\n\nKnicks\n5\n\n\n\n\nShortest Rebuilds:\n\n\n\nTeam\nRebuild Length\n\n\n\n\nHeat\n2\n\n\nCeltics\n2\n\n\nRaptors\n2\n\n\nClippers\n2\n\n\nBucks\n2.3\n\n\n\n\nAverage rebuild length across all NBA teams: 3.7 seasons\nAcross all teams, the average NBA rebuild lasts approximately 3.7 seasons. In other words, a team missing the playoffs can generally expect to return to contention in about 4 seasons. Rebuild lengths ranged from 2 to 11 seasons, showing substantial variation across teams and eras. However, predictive modeling allows for more accurate estimates for individual teams based on their specific roster features."
   },
   {
     "objectID": "report.html#predictive-modeling",
@@ -46,7 +46,7 @@
     "href": "report.html#streamlit-applications",
     "title": "Analyzing NBA Rebuilds and Playoff Prediction",
     "section": "Streamlit Applications",
-    "text": "Streamlit Applications\nTwo interactive Streamlit applications were built, both accessible via a single app interface: - A Rebuild Analyzer for exploring historical trends - A Playoff Predictor for estimating future outcomes\nThese apps make the analysis accessible to users without programming experience."
+    "text": "Streamlit Applications\nTwo interactive Streamlit applications were built, both accessible via a single app interface:\n\nA Rebuild Analyzer for exploring historical trends\nA Playoff Predictor for estimating future outcomes\n\nThese apps make the analysis accessible to users without programming experience."
   },
   {
     "objectID": "report.html#limitations",
@@ -60,7 +60,7 @@
     "href": "report.html#conclusion",
     "title": "Analyzing NBA Rebuilds and Playoff Prediction",
     "section": "Conclusion",
-    "text": "Conclusion\nThis project demonstrates that publicly available data and modern tooling can meaningfully characterize NBA rebuilds and produce useful forecasts of when teams may return to playoff contention. Historical analysis shows rebuild length varies widely across franchises and seasons; roster continuity and recent performance trends are consistently informative predictors.\nThe predictive models and interactive apps are intended as decision-support tools rather than definitive forecasts. Their outputs should be interpreted as probabilistic estimates that complement—rather than replace—scouting, medical, and front-office judgment.\nFuture work could improve accuracy by incorporating in-season transactions, injury data, salary-cap dynamics, and more in-depth player-tracking features, and by retraining models as new seasons complete. The code, data, and Streamlit apps are designed for reproducibility and can be extended or adapted by researchers and practitioners.\nBy combining our analysis with interactive tools, this work aims to make rebuild dynamics more accessible to teams, analysts, and fans, while encouraging further exploration in the realm of “rebuilding NBA franchises”."
+    "text": "Conclusion\nThis project demonstrates that publicly available data and modern tooling can meaningfully characterize NBA rebuilds and produce useful forecasts of when teams may return to playoff contention. Historical analysis shows rebuild length varies widely across franchises and seasons; roster continuity and recent performance trends are consistently informative predictors.\nThe predictive models and interactive apps are intended as decision-support tools rather than definitive forecasts. Their outputs should be interpreted as probabilistic estimates that complement scouting, medical, and front-office judgment.\nFuture work could improve accuracy by incorporating in-season transactions, injury data, salary-cap dynamics, and more in-depth player-tracking features, and by retraining models as new seasons complete. The code, data, and Streamlit apps are designed for reproducibility and can be extended or adapted by researchers and fans.\nBy combining our analysis with interactive tools, this work aims to make rebuild dynamics more accessible to teams, analysts, and fans, while encouraging further exploration in the realm of “rebuilding NBA franchises”."
   },
   {
     "objectID": "index.html",
