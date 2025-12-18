@@ -1,0 +1,233 @@
+[
+  {
+    "objectID": "report.html",
+    "href": "report.html",
+    "title": "Analyzing NBA Rebuilds and Playoff Prediction",
+    "section": "",
+    "text": "Professional sports teams often cycle between competitive peaks and rebuilding phases. In the NBA, rebuilding can take several seasons and depends on roster continuity, player development, and organizational decisions.\nThis project explores NBA rebuilds using historical standings data (2010–2023) and applies machine learning to estimate how long teams may take to return to playoff contention. Understanding these patterns helps teams plan strategically and allows fans to anticipate future performance.\nThis report is written for a general audience and does not assume advanced statistical or machine learning background."
+  },
+  {
+    "objectID": "report.html#introduction",
+    "href": "report.html#introduction",
+    "title": "Analyzing NBA Rebuilds and Playoff Prediction",
+    "section": "",
+    "text": "Professional sports teams often cycle between competitive peaks and rebuilding phases. In the NBA, rebuilding can take several seasons and depends on roster continuity, player development, and organizational decisions.\nThis project explores NBA rebuilds using historical standings data (2010–2023) and applies machine learning to estimate how long teams may take to return to playoff contention. Understanding these patterns helps teams plan strategically and allows fans to anticipate future performance.\nThis report is written for a general audience and does not assume advanced statistical or machine learning background."
+  },
+  {
+    "objectID": "report.html#data-collection",
+    "href": "report.html#data-collection",
+    "title": "Analyzing NBA Rebuilds and Playoff Prediction",
+    "section": "Data Collection",
+    "text": "Data Collection\nWe collected NBA regular-season standings using the public nba_api Python package. For each season, we recorded: - Wins and losses - Conference - Playoff qualification\nData were stored as CSV files to ensure reproducibility and offline access. Pre-fetched CSVs were also provided for use in the Streamlit apps to avoid API delays."
+  },
+  {
+    "objectID": "report.html#rebuild-analysis",
+    "href": "report.html#rebuild-analysis",
+    "title": "Analyzing NBA Rebuilds and Playoff Prediction",
+    "section": "Rebuild Analysis",
+    "text": "Rebuild Analysis\nA rebuild was defined as a period where a team missed the playoffs after previously qualifying, followed by a later return to playoff contention.\nBy aggregating data across multiple seasons, we measured how long each team remained outside the playoffs. These rebuild periods were visualized using tables and season-by-season charts to highlight team performance trends.\n\nLongest Rebuilds:\n\n\n\nTeam\nRebuild Length\n\n\n\n\nSuns\n11\n\n\n76ers\n6\n\n\nNuggets\n6\n\n\nMagic\n5.5\n\n\nKnicks\n5\n\n\n\n\nShortest Rebuilds:\n\n\n\nTeam\nRebuild Length\n\n\n\n\nHeat\n2\n\n\nCeltics\n2\n\n\nRaptors\n2\n\n\nClippers\n2\n\n\nBucks\n2.3\n\n\n\n\nAverage rebuild length across all NBA teams: 3.7 seasons\nAcross all teams, the average NBA rebuild lasts approximately 3.7 seasons. In other words, a team missing the playoffs can generally expect to return to contention in about 4 seasons. Rebuild lengths ranged from 2 to 11 seasons, showing substantial variation across teams and eras. However, predictive modeling allows for more accurate estimates for individual teams based on their specific roster features."
+  },
+  {
+    "objectID": "report.html#predictive-modeling",
+    "href": "report.html#predictive-modeling",
+    "title": "Analyzing NBA Rebuilds and Playoff Prediction",
+    "section": "Predictive Modeling",
+    "text": "Predictive Modeling\nWe trained regression models to predict how many years a team may take to return to the playoffs based on roster and continuity features. Features included roster continuity, playoff experience, and recent performance trends.\nModels evaluated included: - Random Forest - Gradient Boosting\nPerformance was assessed using standard error metrics, and the final model was selected based on predictive accuracy."
+  },
+  {
+    "objectID": "report.html#use-of-artificial-intelligence-tools",
+    "href": "report.html#use-of-artificial-intelligence-tools",
+    "title": "Analyzing NBA Rebuilds and Playoff Prediction",
+    "section": "Use of Artificial Intelligence Tools",
+    "text": "Use of Artificial Intelligence Tools\nArtificial intelligence tools (including large language models) were used to assist in: - Designing the modeling pipeline - Implementing machine learning workflows - Debugging, refactoring, and formatting code\nAll results were reviewed, tested, and validated. AI tools were used as a development aid."
+  },
+  {
+    "objectID": "report.html#streamlit-applications",
+    "href": "report.html#streamlit-applications",
+    "title": "Analyzing NBA Rebuilds and Playoff Prediction",
+    "section": "Streamlit Applications",
+    "text": "Streamlit Applications\nTwo interactive Streamlit applications were built, both accessible via a single app interface:\n\nA Rebuild Analyzer for exploring historical trends\nA Playoff Predictor for estimating future outcomes\n\nThese apps make the analysis accessible to users without programming experience."
+  },
+  {
+    "objectID": "report.html#limitations",
+    "href": "report.html#limitations",
+    "title": "Analyzing NBA Rebuilds and Playoff Prediction",
+    "section": "Limitations",
+    "text": "Limitations\n\nPredictions depend on historical trends and do not account for injuries, trades, or front-office decisions.\nModel outputs should be interpreted as probabilistic estimates rather than deterministic predictions.\nRoster features approximate team stability, which may not capture all relevant factors."
+  },
+  {
+    "objectID": "report.html#conclusion",
+    "href": "report.html#conclusion",
+    "title": "Analyzing NBA Rebuilds and Playoff Prediction",
+    "section": "Conclusion",
+    "text": "Conclusion\nThis project demonstrates that publicly available data and modern tooling can meaningfully characterize NBA rebuilds and produce useful forecasts of when teams may return to playoff contention. Historical analysis shows rebuild length varies widely across franchises and seasons; roster continuity and recent performance trends are consistently informative predictors.\nThe predictive models and interactive apps are intended as decision-support tools rather than definitive forecasts. Their outputs should be interpreted as probabilistic estimates that complement scouting, medical, and front-office judgment.\nFuture work could improve accuracy by incorporating in-season transactions, injury data, salary-cap dynamics, and more in-depth player-tracking features, and by retraining models as new seasons complete. The code, data, and Streamlit apps are designed for reproducibility and can be extended or adapted by researchers and fans.\nBy combining our analysis with interactive tools, this work aims to make rebuild dynamics more accessible to teams, analysts, and fans, while encouraging further exploration in the realm of “rebuilding NBA franchises”."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Home",
+    "section": "",
+    "text": "This site provides tools and reports for analyzing NBA team rebuilds and predicting playoff returns.\nUse the navigation bar at the top to explore:\n\nTutorial – Step-by-step guide for using the NBA Analytics Suite.\n\nReport – Written analysis of NBA rebuild patterns and predictive modeling.\n\nDocumentation – Technical reference for the underlying Python package.\n\nAll tools are interactive and designed to help you explore NBA data without programming."
+  },
+  {
+    "objectID": "index.html#welcome-to-the-nba-analytics-suite",
+    "href": "index.html#welcome-to-the-nba-analytics-suite",
+    "title": "Home",
+    "section": "",
+    "text": "This site provides tools and reports for analyzing NBA team rebuilds and predicting playoff returns.\nUse the navigation bar at the top to explore:\n\nTutorial – Step-by-step guide for using the NBA Analytics Suite.\n\nReport – Written analysis of NBA rebuild patterns and predictive modeling.\n\nDocumentation – Technical reference for the underlying Python package.\n\nAll tools are interactive and designed to help you explore NBA data without programming."
+  },
+  {
+    "objectID": "tutorial.html",
+    "href": "tutorial.html",
+    "title": "Tutorial: Using the NBA Rebuild Analyzer",
+    "section": "",
+    "text": "This tutorial walks through how to use the nba_rebuilds package and its Streamlit applications to: - Fetch NBA standings data - Analyze multi-season rebuilds trends - Predict how long teams may take to return to the playoffs\nNo prior knowledge of the internal codebase is required."
+  },
+  {
+    "objectID": "tutorial.html#overview",
+    "href": "tutorial.html#overview",
+    "title": "Tutorial: Using the NBA Rebuild Analyzer",
+    "section": "",
+    "text": "This tutorial walks through how to use the nba_rebuilds package and its Streamlit applications to: - Fetch NBA standings data - Analyze multi-season rebuilds trends - Predict how long teams may take to return to the playoffs\nNo prior knowledge of the internal codebase is required."
+  },
+  {
+    "objectID": "tutorial.html#installation",
+    "href": "tutorial.html#installation",
+    "title": "Tutorial: Using the NBA Rebuild Analyzer",
+    "section": "Installation",
+    "text": "Installation\nClone the repository and install dependencies:\ngit clone https://github.com/mitchster21/nba_rebuild_project.git\ncd nba_rebuild_project\npip install -e .\nuv sync"
+  },
+  {
+    "objectID": "tutorial.html#fetch-nba-standings-data",
+    "href": "tutorial.html#fetch-nba-standings-data",
+    "title": "Tutorial: Using the NBA Rebuild Analyzer",
+    "section": "Fetch NBA Standings Data",
+    "text": "Fetch NBA Standings Data\nStandings data can be fetched using the public NBA API or loaded from pre-downloaded CSV files.\nTo fetch manually:\nuv run python -m nba_rebuilds.fetch_data --start 2010 --end 2023 --type standings\nThis command downloads season standings and saves CSV files under:\nsrc/nba_rebuilds/data/"
+  },
+  {
+    "objectID": "tutorial.html#launch-streamlit-app",
+    "href": "tutorial.html#launch-streamlit-app",
+    "title": "Tutorial: Using the NBA Rebuild Analyzer",
+    "section": "Launch Streamlit App",
+    "text": "Launch Streamlit App\nRun the entire NBA Analytics Suite (both Rebuild Analyzer and Playoff Predictor) with one command:\nuv run streamlit run streamlit_app.py"
+  },
+  {
+    "objectID": "tutorial.html#rebuild-analyzer-streamlit-app",
+    "href": "tutorial.html#rebuild-analyzer-streamlit-app",
+    "title": "Tutorial: Using the NBA Rebuild Analyzer",
+    "section": "Rebuild Analyzer (Streamlit App)",
+    "text": "Rebuild Analyzer (Streamlit App)\n\nSelect a range of NBA seasons.\nPreview combined multi-season standings data.\nAggregate performance metrics by team (Team Summary) or view raw season data (Raw Season Data).\nClick Compute Rebuilds to see detected rebuilds for the selected years.\nTip: Fetching via the NBA API is slow and sometimes restricted; using pre-fetched CSV files in src/nba_rebuilds/data/ is recommended."
+  },
+  {
+    "objectID": "tutorial.html#playoff-predictor-streamlit-app",
+    "href": "tutorial.html#playoff-predictor-streamlit-app",
+    "title": "Tutorial: Using the NBA Rebuild Analyzer",
+    "section": "Playoff Predictor (Streamlit App)",
+    "text": "Playoff Predictor (Streamlit App)\n\nEstimate how many years a team may take to return to the playoffs based on roster continuity and player features.\nGenerate predictions for individual teams or run batch predictions.\nView feature importance to understand model behavior.\nAdjust toggles and filters to experiment with different team indicators."
+  },
+  {
+    "objectID": "documentation.html",
+    "href": "documentation.html",
+    "title": "Documentation",
+    "section": "",
+    "text": "Purpose: fetch and persist season standings CSVs for a range of seasons.\n\nInputs: start (int) and end (int) years (e.g., 2010 means season “2009-10” is fetched).\n\nBehavior:\n\nEnsures DATA_DIR exists\n\nIterates years from start to end, formats NBA season string like “2009-10”\n\nCalls get_standings(season_id) to fetch standings\n\nNormalizes column names and adds Season and MadePlayoffs (top 8 per conference) columns\n\nSleeps 1 second between API calls\n\nWrites each season to data/standings_{season}.csv and prints progress\n\n\nOutput / side effects: CSV files written under src/nba_rebuilds/data and console prints\n\n\n\n\n\nPurpose: CLI entrypoint to run data fetching.\n\nInputs: command-line arguments –start (int), –end (int), –type (str).\n\nBehavior:\n\nParses args, calls save_standings when –type is “standings”, otherwise raises ValueError\n\n\nOutput / side effects: invokes save_standings or raises on unknown type\n\n\n\n\nIf run as script, calls main()"
+  },
+  {
+    "objectID": "documentation.html#save_standingsstart-end",
+    "href": "documentation.html#save_standingsstart-end",
+    "title": "Documentation",
+    "section": "",
+    "text": "Purpose: fetch and persist season standings CSVs for a range of seasons.\n\nInputs: start (int) and end (int) years (e.g., 2010 means season “2009-10” is fetched).\n\nBehavior:\n\nEnsures DATA_DIR exists\n\nIterates years from start to end, formats NBA season string like “2009-10”\n\nCalls get_standings(season_id) to fetch standings\n\nNormalizes column names and adds Season and MadePlayoffs (top 8 per conference) columns\n\nSleeps 1 second between API calls\n\nWrites each season to data/standings_{season}.csv and prints progress\n\n\nOutput / side effects: CSV files written under src/nba_rebuilds/data and console prints"
+  },
+  {
+    "objectID": "documentation.html#main",
+    "href": "documentation.html#main",
+    "title": "Documentation",
+    "section": "",
+    "text": "Purpose: CLI entrypoint to run data fetching.\n\nInputs: command-line arguments –start (int), –end (int), –type (str).\n\nBehavior:\n\nParses args, calls save_standings when –type is “standings”, otherwise raises ValueError\n\n\nOutput / side effects: invokes save_standings or raises on unknown type\n\n\n\n\nIf run as script, calls main()"
+  },
+  {
+    "objectID": "documentation.html#calculate_years_to_playoffsdf",
+    "href": "documentation.html#calculate_years_to_playoffsdf",
+    "title": "Documentation",
+    "section": "calculate_years_to_playoffs(df)",
+    "text": "calculate_years_to_playoffs(df)\n\nPurpose: identify seasons where a team missed the playoffs immediately after making them and compute how many years until that team next returned to the playoffs.\n\nInputs: pandas DataFrame with at least [‘team_name’, ‘season’, ‘playoffs’] columns (playoffs encoded 1/0).\n\nBehavior:\n\nsorts by team and season, iterates team-by-team\n\nfor each season that follows a playoff season but is a miss, scans forward to count years until the next playoffs appearance\n\nincludes only rows where a subsequent playoff appearance is found\n\n\nOutput: DataFrame of rows (one per qualifying missed season) with an added years_to_return column (and other original columns)."
+  },
+  {
+    "objectID": "documentation.html#train_and_save_model",
+    "href": "documentation.html#train_and_save_model",
+    "title": "Documentation",
+    "section": "train_and_save_model()",
+    "text": "train_and_save_model()\n\nPurpose: build, evaluate, pick, and persist a regression model that predicts years until a team returns to the playoffs.\n\nInputs: reads data from final_combined_file.csv in the project root.\n\nBehavior:\n\ncalls calculate_years_to_playoffs to build the training dataset\n\nselects a fixed set of features (roster_size, retained_players, new_players, departed_players, continuity_pct, avg_age, median_age, oldest_player, youngest_player, avg_experience, rookies_count, all_nba_count)\n\nsplits into train/test, standard-scales features\n\ntrains RandomForestRegressor and GradientBoostingRegressor, evaluates MAE/RMSE/R² and 5-fold CV MAE\n\nchooses best model by lowest test MAE, prints feature importances if available\n\nsaves the chosen model, scaler, and feature column list to src/nba_rebuilds/data/models as .pkl files\n\n\nOutput: returns (best_model, scaler, feature_cols) and writes three .pkl files to disk\n\nSide effects: prints progress and metrics, creates models directory if missing\n\n\nModule entrypoint\n\nIf run as script (main), calls train_and_save_model()"
+  },
+  {
+    "objectID": "documentation.html#playoffpredictor.initmodel_path-str-none",
+    "href": "documentation.html#playoffpredictor.initmodel_path-str-none",
+    "title": "Documentation",
+    "section": "PlayoffPredictor.init(model_path: str = None)",
+    "text": "PlayoffPredictor.init(model_path: str = None)\n\nPurpose: load a trained model, scaler, and feature list for making predictions.\n\nInputs: optional path to the directory containing model files; defaults to data/models next to the module.\n\nBehavior: resolves the path and joblib.loads “playoff_return_model.pkl”, “feature_scaler.pkl”, and “feature_columns.pkl” into self.model, self.scaler, self.feature_cols.\n\nOutput: initialized PlayoffPredictor instance"
+  },
+  {
+    "objectID": "documentation.html#playoffpredictor.predictteam_data-dict-pd.dataframe---float",
+    "href": "documentation.html#playoffpredictor.predictteam_data-dict-pd.dataframe---float",
+    "title": "Documentation",
+    "section": "PlayoffPredictor.predict(team_data: Dict | pd.DataFrame) -> float",
+    "text": "PlayoffPredictor.predict(team_data: Dict | pd.DataFrame) -&gt; float\n\nPurpose: predict years until a team returns to the playoffs for a single team.\n\nInputs: a dict of feature values or a one-row DataFrame containing all required features.\n\nBehavior: converts dict to DataFrame if needed, validates required features (raises ValueError if any missing), orders/selects features, scales them with the loaded scaler, runs the model, and returns the first prediction.\n\nOutput: a single float prediction"
+  },
+  {
+    "objectID": "documentation.html#playoffpredictor.predict_batchteams_data-pd.dataframe---np.ndarray",
+    "href": "documentation.html#playoffpredictor.predict_batchteams_data-pd.dataframe---np.ndarray",
+    "title": "Documentation",
+    "section": "PlayoffPredictor.predict_batch(teams_data: pd.DataFrame) -> np.ndarray",
+    "text": "PlayoffPredictor.predict_batch(teams_data: pd.DataFrame) -&gt; np.ndarray\n\nPurpose: predict years-to-return for multiple teams at once.\n\nInputs: DataFrame with one row per team containing the required feature columns.\n\nBehavior: selects feature columns, scales them, and returns model predictions for all rows.\n\nOutput: numpy array of predictions"
+  },
+  {
+    "objectID": "documentation.html#playoffpredictor.get_feature_importance---pd.dataframe-none",
+    "href": "documentation.html#playoffpredictor.get_feature_importance---pd.dataframe-none",
+    "title": "Documentation",
+    "section": "PlayoffPredictor.get_feature_importance() -> pd.DataFrame | None",
+    "text": "PlayoffPredictor.get_feature_importance() -&gt; pd.DataFrame | None\n\nPurpose: expose model feature importances when available.\n\nInputs: none.\n\nBehavior: if the loaded model has attribute feature_importances_, returns a DataFrame with features and importance sorted descending; otherwise returns None.\n\nOutput: DataFrame of feature importances or None"
+  },
+  {
+    "objectID": "documentation.html#aggregate_by_teamdf-pd.dataframe---pd.dataframe",
+    "href": "documentation.html#aggregate_by_teamdf-pd.dataframe---pd.dataframe",
+    "title": "Documentation",
+    "section": "aggregate_by_team(df: pd.DataFrame) -> pd.DataFrame",
+    "text": "aggregate_by_team(df: pd.DataFrame) -&gt; pd.DataFrame\n\nPurpose: collapse multi-season standings into one row per team.\n\nInputs: DataFrame with columns including SeasonID, Wins, WinPct, MadePlayoffs, TeamName.\n\nBehavior: groups by TeamName and computes Seasons (count), AvgWins, AvgWinPct, PlayoffAppearances (sum), PlayoffRate (mean), FirstSeason, LastSeason; resets index and sorts by AvgWinPct desc.\n\nOutput: aggregated DataFrame with one row per team"
+  },
+  {
+    "objectID": "documentation.html#run_with_capturefunc-args-kwargs---str",
+    "href": "documentation.html#run_with_capturefunc-args-kwargs---str",
+    "title": "Documentation",
+    "section": "_run_with_capture(func, *args, **kwargs) -> str",
+    "text": "_run_with_capture(func, *args, **kwargs) -&gt; str\n\nPurpose: run a function and capture its stdout as a string.\n\nInputs: callable and its args/kwargs.\n\nBehavior: redirects stdout to an in-memory buffer while calling the function, returns captured output stripped.\n\nOutput: captured stdout string"
+  },
+  {
+    "objectID": "documentation.html#load_season_csvyear-int---pd.dataframe",
+    "href": "documentation.html#load_season_csvyear-int---pd.dataframe",
+    "title": "Documentation",
+    "section": "load_season_csv(year: int) -> pd.DataFrame",
+    "text": "load_season_csv(year: int) -&gt; pd.DataFrame\n\nPurpose: load a single season standings CSV into a DataFrame.\n\nInputs: integer year (e.g., 2021 loads “2020-21”).\n\nBehavior: constructs season_id, builds path to data/standings_{season_id}.csv, raises FileNotFoundError if missing, reads CSV, adds SeasonID column.\n\nOutput: DataFrame for that season"
+  },
+  {
+    "objectID": "documentation.html#main---none",
+    "href": "documentation.html#main---none",
+    "title": "Documentation",
+    "section": "main() -> None",
+    "text": "main() -&gt; None\n\nPurpose: Streamlit app entrypoint for fetching standings, previewing multi-season data, and computing rebuilds.\n\nBehavior: renders UI controls (start/end year, fetch/compute buttons, view mode), optionally calls fetch_data.save_standings (with output capture), loads season files into a combined DataFrame, shows either team summary (via aggregate_by_team) or raw data, and when requested runs rebuilds.compute_rebuilds and displays results.\n\nOutput / side effects: interactive Streamlit UI, console/st UI messages, may call external I/O (fetch/save CSVs)\n\n\nModule entrypoint\n\nIf run as a script, calls main()"
+  },
+  {
+    "objectID": "documentation.html#load_model-cached-via-st.cache_resource",
+    "href": "documentation.html#load_model-cached-via-st.cache_resource",
+    "title": "Documentation",
+    "section": "load_model() (cached via @st.cache_resource)",
+    "text": "load_model() (cached via @st.cache_resource)\n\nPurpose: instantiate and return a PlayoffPredictor and a success flag.\n\nInputs: none.\n\nBehavior: tries to create PlayoffPredictor(); on success returns (predictor, True); on exception logs an error to Streamlit and returns (None, False).\n\nNotes: the rest of the file is a Streamlit app (no other top-level functions). It builds the UI, collects user inputs, calls predictor.predict() for a single-team prediction and predictor.get_feature_importance() for visualization, and displays results and interpretation."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  }
+]
