@@ -11,13 +11,16 @@ authors = [
   { name = "Walter Vogelmann" }
 ]
 readme = "README.md"
-requires-python = ">=3.10"
+requires-python = ">=3.11"
 dependencies = [
   "nba_api",
   "ipykernel>=7.1.0",
   "jupyter>=1.1.1",
-  "numpy>=2.3.5",
+  "numpy>=2.0",
   "pandas>=2.3.3",
   "streamlit>=1.40.0",
+  "joblib",
+  "scikit-learn",
+  "plotly",
 ]
 

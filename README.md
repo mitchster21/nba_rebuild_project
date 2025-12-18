@@ -7,51 +7,49 @@ https://mitchster21.github.io/nba_rebuild_project/
 The repository bundles a Python package, Quarto site, automated tests, and two Streamlit prototypes for analyzing NBA rebuilds and predicting playoff returns.
 
 ## Quick start
-
+Clone the repository, install dependencies, and run tests:
 ```bash
+git clone https://github.com/mitchster21/nba_rebuild_project.git
+cd nba_rebuild_project
+pip install -e .
 uv sync
 uv run pytest
 ```
 
-# Streamlit prototypes
+# Streamlit App: NBA Analytics Suite
+Run this command to launch the full NBA Analytics Suite with both the Rebuild Analyzer and Playoff Predictor:
+```bash
+uv run streamlit run streamlit_app.py
+```
 
 ## Rebuild Analyzer
 
-- Edit src/nba_rebuilds/1_Rebuild_Analyzer.py to adjust data sources or rebuild logic.
+-Select a range of NBA seasons.
 
-- Launch the UI with:
+-Preview multi-season standings data.
 
-```bash
-uv run streamlit run src/nba_rebuilds/1_Rebuild_Analyzer.py
-```
+-Aggregate performance metrics by team (Team Summary) or view raw season data (Raw Season Data).
 
-- Use the sidebar controls to:
+-Click Compute Rebuilds to detect rebuild periods for the selected years.
 
-    - Fetch standings via fetch_data.save_standings
-
-    - Preview multi-season data
-
-    - Aggregate by team
-
-    - Run rebuild computations and view results
+-Tip: Fetching via the NBA API can be slow or restricted; rely on pre-fetched CSVs when possible.
 
 ## Playoff Predictor
 
-- Edit src/nba_rebuilds/2_Playoff_Predictor.py to customize predictor behavior or visuals.
+-Estimate how many years a team may take to return to the playoffs based on roster continuity and player features.
 
-- Launch the UI with:
+-Generate predictions for individual teams or run batch predictions.
 
+-View feature importance to understand model behavior.
+
+-Adjust filters and toggles to test different team indicators.
+
+## Advanced users 
+You can edit individual Streamlit scripts directly:
 ```bash
-uv run streamlit run src/nba_rebuilds/2_Playoff_Predictor.py
+pages/1_Rebuild_Analyzer.py
+pages/2_Playoff_Predictor.py
 ```
-
-- The app loads a trained model via PlayoffPredictor and provides:
-
-    - Single-team predictions
-
-    - Batch predictions
-
-    - Feature importance visualization
 
 # Core modules
 
@@ -72,20 +70,15 @@ uv run streamlit run src/nba_rebuilds/2_Playoff_Predictor.py
 Rebuild the public site (including the technical report placeholder) with:
 
 ```bash
-uv run quarto render
-```
-
-Serve locally via:
-
-```bash
-uv run quarto preview
+uv run quarto render # build site 
+uv run quarto preview # serve locally
 ```
 
 while authoring docs.
 
 # Data and models
 
-- Season standings are written under src/nba_rebuilds/data/standings_{season}.csv.
+- Season standings CSV's are written under src/nba_rebuilds/data/standings_{season}.csv.
 
 - Trained models, scalers, and feature lists are saved under src/nba_rebuilds/data/models.
 

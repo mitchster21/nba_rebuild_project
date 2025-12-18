@@ -1,0 +1,84 @@
+---
+title: "Analyzing NBA Rebuilds and Playoff Prediction"
+---
+
+## Introduction
+
+Professional sports teams often cycle between competitive peaks and rebuilding phases. In the NBA, rebuilding can take several seasons and depends on roster continuity, player development, and organizational decisions.
+
+This project explores NBA rebuilds using historical standings data (2010–2023) and applies machine learning to estimate how long teams may take to return to playoff contention. Understanding these patterns helps teams plan strategically and allows fans to anticipate future performance.
+
+**This report is written for a general audience and does not assume advanced statistical or machine learning background.**
+
+---
+
+## Data Collection
+
+We collected NBA regular-season standings using the public `nba_api` Python package. For each season, we recorded:
+- Wins and losses
+- Conference
+- Playoff qualification
+
+Data were stored as CSV files to ensure reproducibility and offline access. Pre-fetched CSVs were also provided for use in the Streamlit apps to avoid API delays.
+
+---
+
+## Rebuild Analysis
+
+A rebuild was defined as a period where a team missed the playoffs after previously qualifying, followed by a later return to playoff contention.
+
+By aggregating multi-season data, we identified how long different teams remained outside the playoffs. Rebuild periods were visualized using tables and season-by-season charts to illustrate team performance trends over time.
+
+---
+
+## Predictive Modeling
+
+We trained regression models to predict how many years a team may take to return to the playoffs based on roster and continuity features. Features included roster continuity, playoff experience, and recent performance trends.
+
+Models evaluated included:
+- Random Forest
+- Gradient Boosting
+
+Performance was assessed using standard error metrics, and the final model was selected based on predictive accuracy.
+
+---
+
+## Use of Artificial Intelligence Tools
+
+Artificial intelligence tools (including large language models) were used to assist in:
+- Designing the modeling pipeline 
+- Implementing machine learning workflows
+- Debugging, refactoring, and formatting code
+
+All results were reviewed, tested, and validated. AI tools were used as a development aid.
+
+---
+
+## Streamlit Applications
+
+Two interactive Streamlit applications were built, both accessible via a single app interface:
+- A **Rebuild Analyzer** for exploring historical trends
+- A **Playoff Predictor** for estimating future outcomes
+
+These apps make the analysis accessible to users without programming experience.
+
+---
+
+## Limitations
+
+- Predictions depend on historical trends and do not account for injuries, trades, or front-office decisions.
+- Model outputs should be interpreted as probabilistic estimates rather than deterministic predictions.
+- Roster features approximate team stability, which may not capture all relevant factors.
+
+---
+
+## Conclusion
+
+This project demonstrates that publicly available data and modern tooling can meaningfully characterize NBA rebuilds and produce useful forecasts of when teams may return to playoff contention. Historical analysis shows rebuild length varies widely across franchises and seasons; roster continuity and recent performance trends are consistently informative predictors.
+
+The predictive models and interactive apps are intended as decision-support tools rather than definitive forecasts. Their outputs should be interpreted as probabilistic estimates that complement—rather than replace—scouting, medical, and front-office judgment.
+
+Future work could improve accuracy by incorporating in-season transactions, injury data, salary-cap dynamics, and more in-depth player-tracking features, and by retraining models as new seasons complete. The code, data, and Streamlit apps are designed for reproducibility and can be extended or adapted by researchers and practitioners.
+
+By combining our analysis with interactive tools, this work aims to make rebuild dynamics more accessible to teams, analysts, and fans, while encouraging further exploration in the realm of "rebuilding NBA franchises".
+

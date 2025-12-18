@@ -39,8 +39,9 @@ def load_season_csv(year: int) -> pd.DataFrame:
     season_end = str(year)[-2:]
     season_id = f"{season_start}-{season_end}"
 
-    BASE_DIR = Path(__file__).resolve().parent
-    file_path = BASE_DIR / "src" / "nba_rebuilds" / "data" / f"standings_{season_id}.csv"
+    # Project root is where 'src/nba_rebuilds/data/' lives
+    PROJECT_ROOT = Path(__file__).resolve().parent.parent  # adjust if needed
+    file_path = PROJECT_ROOT / "src" / "nba_rebuilds" / "data" / f"standings_{season_id}.csv"
 
     if not file_path.exists():
         raise FileNotFoundError(file_path)
@@ -48,6 +49,7 @@ def load_season_csv(year: int) -> pd.DataFrame:
     df = pd.read_csv(file_path)
     df["SeasonID"] = season_id
     return df
+
 
 
 def main() -> None:
